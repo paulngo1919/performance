@@ -1,0 +1,6 @@
+@Acme.BookStore.HttpApi.Host_HostAddress = http://localhost:5167
+
+GET {{Acme.BookStore.HttpApi.Host_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
