@@ -55,12 +55,12 @@ namespace Acme.BookStore.Departments
             {
                 departments.Add(new Department(Guid.NewGuid())
                 {
-                    Code = $"DP_{DateTime.Now.ToString("ddMMyyyHHmmsss")}_{i}",
+                    Code = $"DP_{i}",
                     Name = $"DP_Name_{DateTime.Now.ToString("ddMMyyyHHmmsss")}_{i}",
                     Region = "Extentions"
                 });
             }
-            await departmentRepository.AddEntitiesUsingBulkInsertExtentionAsync(departments, BatchSize);
+            await departmentRepository.AddOrUpdateUsingBulkExtentionAsync(departments, new List<string> { "Code" }, BatchSize);
             return true;
         }
     }

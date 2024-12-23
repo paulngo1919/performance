@@ -15,5 +15,6 @@ namespace Acme.BookStore.Departments
         void AddEntities(IEnumerable<Department> entities);
         Task AddEntitiesInBatchesAsync(IEnumerable<Department> entities, int batchSize = 1000);
         Task AddEntitiesUsingBulkInsertExtentionAsync(IEnumerable<Department> entities, int batchSize = 1000);
+        Task AddOrUpdateUsingBulkExtentionAsync(IEnumerable<Department> entities, List<string> updateByProperties, int batchSize = 1000);
     }
 }
