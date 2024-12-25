@@ -81,7 +81,9 @@ namespace Acme.BookStore.Departments
                 SetOutputIdentity = true,
                 BatchSize = batchSize,
                 UpdateByProperties = updateByProperties,
-                PropertiesToExcludeOnUpdate = new List<string> { "Id" }
+                PropertiesToExcludeOnUpdate = new List<string> { "Id", "CreationTime" },
+                //PropertiesToExcludeOnInsert = new List<string> { "LastModificationTime" }
+                
             };
 
             var dbContext = dbContextProvider.GetDbContext();
